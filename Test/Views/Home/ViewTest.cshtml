@@ -1,0 +1,184 @@
+﻿@model ModelTest
+@{
+    ViewData["Title"] = "Test de Autoestima";
+}
+
+<div class="mb-3">
+    <h1 class="text-center">Test de Autoestima</h1>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="container">
+        <form asp-action="EnviarTest" asp-controller="Home" method="post">
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label">Nombre</label>
+                <input asp-for="Nombre" class="form-control" placeholder="Ingrese su Nombre" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Correo" class="form-label"></label>
+                <input asp-for="Correo" class="form-control" placeholder="Ingrese su correo electrónico" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta1">
+                    Siento que soy una persona digna de aprecio,
+                    al menos en igual medida que los demás
+                </label>
+                <select asp-for="Pregunta1" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta1" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta2">
+                    Estoy convencido de que tengo cualidades buenas
+                </label>
+                <select asp-for="Pregunta2" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta2" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta3">
+                    Soy capaz de hacer las cosas tan bien como la mayoría de la gente
+                </label>
+                <select asp-for="Pregunta3" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta3" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta4">
+                    Tengo una actitud positiva hacia mí mismo.
+                </label>
+                <select asp-for="Pregunta4" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta4" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta5">
+                    En general, estoy satisfecho conmigo mismo.
+                </label>
+                <select asp-for="Pregunta5" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta5" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta6">
+                    Siento que no tengo mucho de lo que estar orgulloso.
+                </label>
+                <select asp-for="Pregunta6" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta6" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta7">
+                    En general, tiendo a pensar que soy un fracaso.
+                </label>
+                <select asp-for="Pregunta7" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta7" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta8">
+                    Me gustaría tener más respeto por mí mismo.
+                </label>
+                <select asp-for="Pregunta8" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta8" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta9">
+                    Hay veces que realmente siento que soy inútil.
+                </label>
+                <select asp-for="Pregunta9" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta9" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Pregunta10">
+                    A veces pienso que no soy bueno para nada.
+                </label>
+                <select asp-for="Pregunta10" class="form-select">
+                    <option selected disabled></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <span asp-validation-for="Pregunta10" class="text-danger"></span>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
+
+@{
+    if (TempData["Message"] != null)
+    {
+        <p>@TempData["Message"]</p>
+    }
+}
+
+
